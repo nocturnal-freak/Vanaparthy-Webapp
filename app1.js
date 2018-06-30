@@ -2,12 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, ImageBackground ,TextInput,Image,Button,TouchableOpacity,Linking} from 'react-native';
 //import { StyleSheet, Text, View } from 'react-native';
 // import bounce from './Assets/speed.gif';
-import { Icon } from 'react-native-elements'
-
 import backgroundPic from './Assets/Images/Background.jpg';
 import emailIcon from './Assets/Images/Email-icon.png';
 import lock from './Assets/Images/lock.png';
-
 import Expo from 'expo';
 import quicksandBold from './Assets/Fonts/Quicksand/Quicksand-Bold.ttf';
 import quicksandRegular from './Assets/Fonts/Quicksand/Quicksand-Regular.ttf';
@@ -33,9 +30,11 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <ImageBackground source={backgroundPic}  style={styles.backgroundImage}>
-          <Text style={styles.red}>Anaemia App</Text>
-          <Text style={{fontSize:12,textAlign:'center',fontFamily:'quicksandBold',color:'#ffffff',marginBottom:20}}>Welcome! Please login to your account.</Text>
-        </ImageBackground>
+
+
+        <Text style={styles.red}>Anaemia App</Text>
+        <Text style={{fontSize:12,textAlign:'center',fontFamily:'quicksandBold',color:'#ffffff',marginBottom:50}}>Welcome! Please login to your account.</Text>
+
 
         <View style={styles.SectionStyle}>
           <Image source={emailIcon} style={styles.icon}/>
@@ -56,18 +55,18 @@ export default class App extends React.Component {
 
         <View style={{flexDirection:'row',flexWrap:'wrap'}}>
         <TouchableOpacity onPress={() => Linking.openURL('http://google.com')}>
-          <Text style={{color: 'blue',textAlign:'center',textAlignVertical:'center',marginTop:20,fontFamily:'quicksandRegular',marginBottom:150,marginRight:45}}>
+          <Text style={{color: '#669999',textAlign:'center',textAlignVertical:'center',marginTop:20,fontFamily:'quicksandBold',marginRight:45,marginLeft:75}}>
                 Need Help?
           </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => Linking.openURL('http://google.com')}>
-          <Text style={{color: 'blue',textAlign:'center',textAlignVertical:'center',marginBottom:150 ,marginTop:20,fontFamily:'quicksandRegular'}}>
+          <Text style={{color: '#669999',textAlign:'center',textAlignVertical:'center',marginTop:20,fontFamily:'quicksandBold'}}>
                 Register Here?
           </Text>
         </TouchableOpacity>
         </View>
 
-
+        </ImageBackground>
       </View>
     );
   }
@@ -78,20 +77,19 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    //backgroundColor:'#C2CDC6'
   },
   backgroundImage:{
      width:370,
-     height:360,
-     marginBottom:50
+     height:600,
    },
    red:{
      color:'#669999',
      fontSize: 40,
      fontFamily:'quicksandBold',
      textAlign:'center',
-     marginTop:255
+     marginTop:150
    },
+
    textInput:{
      // marginLeft:60,
      // marginRight:60,
@@ -117,12 +115,14 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#fff',
-      borderWidth: .25,
-      borderColor: '#669999',
+      backgroundColor: '#ffffff',
+      borderWidth: .5,
+      borderColor: '#000',
       height: 40,
       width:245,
-      marginBottom:25
+      marginBottom:25,
+      marginLeft:60,
+      marginRight:60,
     },
 
    icon:{
@@ -134,6 +134,13 @@ const styles = StyleSheet.create({
      alignItems: 'center'
 
    },
+
+   bounce:{
+     marginLeft:50,
+     width:250,
+     height:250,
+     marginTop:30
+   },
    buttonText:{
      color:'#ffffff',
      fontSize: 15,
@@ -143,13 +150,12 @@ const styles = StyleSheet.create({
      textAlignVertical:'center'
    },
    button:{
-     //marginLeft:10,
-     //marginRight:10,
-     width:245,
+     marginLeft:60,
+     marginRight:60,
      shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.8,
-      shadowRadius: 4,
-      elevation: 2,
+      shadowRadius: 10,
+      elevation: 20,
      //marginTop:25,
      backgroundColor: '#669999',
 
