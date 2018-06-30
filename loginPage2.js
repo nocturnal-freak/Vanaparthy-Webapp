@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground ,TextInput,Image,Button,TouchableOpacity,Linking} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground ,TextInput,Image,Button,TouchableOpacity,Linking,KeyboardAvoidingView} from 'react-native';
 //import { StyleSheet, Text, View } from 'react-native';
 // import bounce from './Assets/speed.gif';
 import { Icon } from 'react-native-elements'
@@ -11,6 +11,7 @@ import lock from './Assets/Images/lock.png';
 import Expo from 'expo';
 import quicksandBold from './Assets/Fonts/Quicksand/Quicksand-Bold.ttf';
 import quicksandRegular from './Assets/Fonts/Quicksand/Quicksand-Regular.ttf';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
 export default class App extends React.Component {
@@ -31,21 +32,23 @@ export default class App extends React.Component {
 
     }
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+
         <ImageBackground source={backgroundPic}  style={styles.backgroundImage}>
           <Text style={styles.red}>Anaemia App</Text>
           <Text style={{fontSize:12,textAlign:'center',fontFamily:'quicksandBold',color:'#ffffff',marginBottom:20}}>Welcome! Please login to your account.</Text>
         </ImageBackground>
 
+
         <View style={styles.SectionStyle}>
           <Image source={emailIcon} style={styles.icon}/>
-          <TextInput onChangeText={(text) => this.setState({email})}
+          <TextInput onChangeText={(email) => this.setState({email})}
           value={this.state.email} style={styles.textInput} placeholder="Email" underlineColorAndroid='transparent'/>
         </View>
 
         <View style={styles.SectionStyle}>
           <Image source={lock} style={styles.icon}/>
-          <TextInput secureTextEntry={true} onChangeText={(text) => this.setState({password})}
+          <TextInput secureTextEntry={true} onChangeText={(password) => this.setState({password})}
           value={this.state.password} style={styles.textInput} placeholder="Password" underlineColorAndroid='transparent'/>
         </View>
 
@@ -68,7 +71,8 @@ export default class App extends React.Component {
         </View>
 
 
-      </View>
+
+      </KeyboardAvoidingView>
     );
   }
 }
@@ -78,6 +82,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+
     //backgroundColor:'#C2CDC6'
   },
   backgroundImage:{
@@ -122,7 +127,8 @@ const styles = StyleSheet.create({
       borderColor: '#669999',
       height: 40,
       width:245,
-      marginBottom:25
+      marginBottom:25,
+      //flex:1
     },
 
    icon:{
@@ -149,7 +155,7 @@ const styles = StyleSheet.create({
      shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.8,
       shadowRadius: 4,
-      elevation: 5,
+      elevation: 2,
      //marginTop:25,
      backgroundColor: '#669999',
 

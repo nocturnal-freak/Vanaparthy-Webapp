@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground ,TextInput,Image,Button,TouchableOpacity,Linking} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground ,TextInput,Image,Button,TouchableOpacity,Linking,KeyboardAvoidingView} from 'react-native';
 //import { StyleSheet, Text, View } from 'react-native';
 // import bounce from './Assets/speed.gif';
 import backgroundPic from './Assets/Images/Background.jpg';
@@ -28,7 +28,8 @@ export default class App extends React.Component {
 
     }
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
+
         <ImageBackground source={backgroundPic}  style={styles.backgroundImage}>
 
 
@@ -38,13 +39,13 @@ export default class App extends React.Component {
 
         <View style={styles.SectionStyle}>
           <Image source={emailIcon} style={styles.icon}/>
-          <TextInput onChangeText={(text) => this.setState({email})}
+          <TextInput onChangeText={(email) => this.setState({email})}
           value={this.state.email} style={styles.textInput} placeholder="Email" underlineColorAndroid='transparent'/>
         </View>
 
         <View style={styles.SectionStyle}>
           <Image source={lock} style={styles.icon}/>
-          <TextInput secureTextEntry={true} onChangeText={(text) => this.setState({password})}
+          <TextInput secureTextEntry={true} onChangeText={(password) => this.setState({password})}
           value={this.state.password} style={styles.textInput} placeholder="Password" underlineColorAndroid='transparent'/>
         </View>
 
@@ -67,7 +68,7 @@ export default class App extends React.Component {
         </View>
 
         </ImageBackground>
-      </View>
+        </KeyboardAvoidingView>
     );
   }
 }
