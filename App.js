@@ -1,23 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground ,TextInput,Image,Button,TouchableOpacity,Linking,KeyboardAvoidingView} from 'react-native';
+//import { StyleSheet, Text, View } from 'react-native';
+// import bounce from './Assets/speed.gif';
+import { Icon } from 'react-native-elements'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
+import backgroundPic from './Assets/Images/Background.jpg';
+import emailIcon from './Assets/Images/Email-icon.png';
+import lock from './Assets/Images/lock.png';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+import Expo from 'expo';
+import quicksandBold from './Assets/Fonts/Quicksand/Quicksand-Bold.ttf';
+import quicksandRegular from './Assets/Fonts/Quicksand/Quicksand-Regular.ttf';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import HomeScreen from "./Screens/Login"
+import ProfileScreen from "./Screens/Profile"
+import {
+  createStackNavigator,
+} from 'react-navigation';
+
+const Navigation = createStackNavigator({
+  Home: { screen: HomeScreen },
+  Profile: { screen: ProfileScreen },
 });
+
+export default class  App extends React.Component {
+  render () {
+    return <Navigation />
+   }
+
+}
