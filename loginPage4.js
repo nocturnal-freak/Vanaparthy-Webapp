@@ -34,7 +34,7 @@ export default class App extends React.Component {
 
 
         <Text style={styles.red}>Anaemia App</Text>
-        <Text style={{fontSize:12,textAlign:'center',fontFamily:'quicksandBold',color:'#ffffff',marginBottom:50}}>Welcome! Please login to your account.</Text>
+        <Text style={{fontSize:12,textAlign:'center',fontFamily:'quicksandBold',color:'#ffffff',marginBottom:75}}>Welcome! Please login to your account.</Text>
 
 
         <View style={styles.SectionStyle}>
@@ -88,24 +88,24 @@ const styles = StyleSheet.create({
      fontSize: 40,
      fontFamily:'quicksandBold',
      textAlign:'center',
-     marginTop:150
+     marginTop:200
    },
 
    textInput:{
      // marginLeft:60,
      // marginRight:60,
-     width:200,
+     width:260,
      margin:5,
      borderColor: 'transparent',
-     borderWidth: 0.25,
+     borderWidth: 0.15,
      fontFamily:'quicksandRegular',
      marginTop:5,
      fontSize:15,
      //textAlign:'center',
      alignItems: 'center',
      justifyContent: 'center',
-     backgroundColor: '#ffffff',
-     color:'black',
+     backgroundColor: 'transparent',
+     color:'#669999',
      textAlignVertical:'center',
      shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.8,
@@ -116,19 +116,22 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#ffffff',
+      backgroundColor: 'transparent',
       borderWidth: .5,
-      borderColor: '#000',
+      borderBottomColor: '#669999',
+      borderTopColor: 'transparent',
+      borderLeftColor: 'transparent',
+      borderRightColor: 'transparent',
       height: 40,
-      width:245,
-      marginBottom:25,
-      marginLeft:60,
-      marginRight:60,
+      //width:245,
+      marginBottom:15,
+      marginLeft:20,
+      marginRight:20,
     },
 
    icon:{
      padding: 10,
-     margin: 5,
+     marginLeft: 1,
      height: 25,
      width: 25,
      resizeMode : 'stretch',
@@ -151,8 +154,9 @@ const styles = StyleSheet.create({
      textAlignVertical:'center'
    },
    button:{
-     marginLeft:60,
-     marginRight:60,
+     marginLeft:20,
+     marginRight:20,
+     marginTop:25,
      shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.8,
       shadowRadius: 10,

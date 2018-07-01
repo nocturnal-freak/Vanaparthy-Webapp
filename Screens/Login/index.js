@@ -2,15 +2,18 @@ import React from 'react';
 import { StyleSheet, Text, View, ImageBackground ,TextInput,Image,Button,TouchableOpacity,Linking,KeyboardAvoidingView} from 'react-native';
 //import { StyleSheet, Text, View } from 'react-native';
 // import bounce from './Assets/speed.gif';
-import backgroundPic from './Assets/Images/Background.jpg';
-import emailIcon from './Assets/Images/Email-icon.png';
-import lock from './Assets/Images/lock.png';
+import backgroundPic from '../../Assets/Images/Background.jpg';
+import emailIcon from '../../Assets/Images/Email-icon.png';
+import lock from '../../Assets/Images/lock.png';
 import Expo from 'expo';
-import quicksandBold from './Assets/Fonts/Quicksand/Quicksand-Bold.ttf';
-import quicksandRegular from './Assets/Fonts/Quicksand/Quicksand-Regular.ttf';
+import quicksandBold from '../../Assets/Fonts/Quicksand/Quicksand-Bold.ttf';
+import quicksandRegular from '../../Assets/Fonts/Quicksand/Quicksand-Regular.ttf';
 
 
-export default class App extends React.Component {
+export default class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Welcome',
+  };
   constructor(props){
     super(props);
     this.state={email:"",password:"",isReady:false}
@@ -27,6 +30,7 @@ export default class App extends React.Component {
       return <Expo.AppLoading />;
 
     }
+    const { navigate } = this.props.navigation;
     return (
       <KeyboardAvoidingView style={styles.container} behavior="padding" enabled>
 
@@ -156,7 +160,7 @@ const styles = StyleSheet.create({
      shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.8,
       shadowRadius: 10,
-      elevation: 5,
+      elevation: 20,
      //marginTop:25,
      backgroundColor: '#669999',
 

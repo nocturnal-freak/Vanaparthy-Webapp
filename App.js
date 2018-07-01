@@ -34,39 +34,40 @@ export default class App extends React.Component {
 
 
         <Text style={styles.red}>Anaemia App</Text>
-        <Text style={{fontSize:12,textAlign:'center',fontFamily:'quicksandBold',color:'#ffffff',marginBottom:50}}>Welcome! Please login to your account.</Text>
+        <Text style={{fontSize:12,textAlign:'center',fontFamily:'quicksandBold',color:'#ffffff',marginBottom:75}}>Welcome! Please login to your account.</Text>
+
+        <View style={{ backgroundColor:'#ffffff',height:280, marginRight:20,marginLeft:20}}>
+          <Text>{"\n"}</Text>
+          <View style={styles.SectionStyle}>
+            <Image source={emailIcon} style={styles.icon}/>
+            <TextInput onChangeText={(email) => this.setState({email})}
+            value={this.state.email} style={styles.textInput} placeholder="Email" underlineColorAndroid='transparent'/>
+          </View>
+
+          <View style={styles.SectionStyle}>
+            <Image source={lock} style={styles.icon}/>
+            <TextInput secureTextEntry={true} onChangeText={(password) => this.setState({password})}
+            value={this.state.password} style={styles.textInput} placeholder="Password" underlineColorAndroid='transparent'/>
+          </View>
 
 
-        <View style={styles.SectionStyle}>
-          <Image source={emailIcon} style={styles.icon}/>
-          <TextInput onChangeText={(email) => this.setState({email})}
-          value={this.state.email} style={styles.textInput} placeholder="Email" underlineColorAndroid='transparent'/>
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>LOGIN</Text>
+          </TouchableOpacity>
+
+          <View style={{flexDirection:'row',flexWrap:'wrap'}}>
+          <TouchableOpacity onPress={() => Linking.openURL('http://google.com')}>
+            <Text style={{color: '#669999',textAlign:'center',textAlignVertical:'center',marginTop:20,fontFamily:'quicksandBold',marginRight:45,marginLeft:75}}>
+                  Need Help?
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => Linking.openURL('http://google.com')}>
+            <Text style={{color: '#669999',textAlign:'center',textAlignVertical:'center',marginTop:20,fontFamily:'quicksandBold'}}>
+                  Register Here?
+            </Text>
+          </TouchableOpacity>
+          </View>
         </View>
-
-        <View style={styles.SectionStyle}>
-          <Image source={lock} style={styles.icon}/>
-          <TextInput secureTextEntry={true} onChangeText={(password) => this.setState({password})}
-          value={this.state.password} style={styles.textInput} placeholder="Password" underlineColorAndroid='transparent'/>
-        </View>
-
-
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>LOGIN</Text>
-        </TouchableOpacity>
-
-        <View style={{flexDirection:'row',flexWrap:'wrap'}}>
-        <TouchableOpacity onPress={() => Linking.openURL('http://google.com')}>
-          <Text style={{color: '#669999',textAlign:'center',textAlignVertical:'center',marginTop:20,fontFamily:'quicksandBold',marginRight:45,marginLeft:75}}>
-                Need Help?
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => Linking.openURL('http://google.com')}>
-          <Text style={{color: '#669999',textAlign:'center',textAlignVertical:'center',marginTop:20,fontFamily:'quicksandBold'}}>
-                Register Here?
-          </Text>
-        </TouchableOpacity>
-        </View>
-
         </ImageBackground>
         </KeyboardAvoidingView>
     );
@@ -94,18 +95,18 @@ const styles = StyleSheet.create({
    textInput:{
      // marginLeft:60,
      // marginRight:60,
-     width:200,
+     width:220,
      margin:5,
      borderColor: 'transparent',
-     borderWidth: 0.25,
+     borderWidth: 0.15,
      fontFamily:'quicksandRegular',
      marginTop:5,
      fontSize:15,
      //textAlign:'center',
      alignItems: 'center',
      justifyContent: 'center',
-     backgroundColor: '#ffffff',
-     color:'black',
+     backgroundColor: 'transparent',
+     color:'#669999',
      textAlignVertical:'center',
      shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.8,
@@ -116,21 +117,24 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#ffffff',
+      backgroundColor: 'transparent',
       borderWidth: .5,
-      borderColor: '#000',
+      borderBottomColor: '#669999',
+      borderTopColor: 'transparent',
+      borderLeftColor: 'transparent',
+      borderRightColor: 'transparent',
       height: 40,
-      width:245,
-      marginBottom:25,
-      marginLeft:60,
-      marginRight:60,
+      //width:245,
+      marginBottom:15,
+      marginLeft:20,
+      marginRight:20,
     },
 
    icon:{
      padding: 10,
-     margin: 5,
-     height: 25,
-     width: 25,
+     marginLeft: 1,
+     height: 30,
+     width: 30,
      resizeMode : 'stretch',
      alignItems: 'center'
 
@@ -151,12 +155,14 @@ const styles = StyleSheet.create({
      textAlignVertical:'center'
    },
    button:{
-     marginLeft:60,
-     marginRight:60,
+     marginLeft:20,
+     marginRight:20,
+     marginTop:25,
+     marginBottom:10,
      shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.8,
       shadowRadius: 10,
-      elevation: 20,
+      elevation: 5,
      //marginTop:25,
      backgroundColor: '#669999',
 
